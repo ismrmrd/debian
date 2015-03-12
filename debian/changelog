@@ -1,11 +1,5 @@
 ismrmrd (1.2.3-1) trusty; urgency=medium
 
-  * New upstream release
-
- -- Dusan Puletic <dusan.puletic@nih.gov>  Tue, 10 Mar 2015 21:40:30 +0000
-
-ismrmrd (1.2.2-1) trusty; urgency=medium
-
   * Initial release. (Closes: #XXXXXX)
 
- -- Dusan Puletic <dusan.puletic@nih.gov>  Tue, 17 Feb 2015 17:17:30 +0000
+ -- Dusan Puletic <dusan.puletic@nih.gov>  Tue, 12 Mar 2015 20:30:30 +0000
