@@ -17,13 +17,18 @@
 
  -1- Run: uscan --force-download --destdir . (from the top folder)
 
- -2- Run: tar -zxf <project>-<version>.tar.gz
+ -2- As a result, you will get additional files:
 
- -1- Make a patch: dpkg-source --commit
+    -a- <project>-<version>.tar.gz (Example: gadgetron-3.4.2.tar.gz) - source code tarball
+    -b- symlink: gadgetron_3.4.2.orig.tar.gz -> gadgetron-3.4.2.tar.gz
 
- -2- Update a changelog file (Example: if the last paragraph is 3.4.1-1, add 3.4.1-2 paragraph)
+ -3- Run: tar -zxf <project>-<version>.tar.gz
 
- -3- Repeat steps -3- and -4- from (I)
+ -4- Make a patch: dpkg-source --commit
+
+ -5- Update a changelog file (Example: if the last paragraph is 3.4.1-1, add 3.4.1-2 paragraph)
+
+ -6- Repeat steps -3- and -4- from (I)
 
 
 (III) Changing the debian folder content:
@@ -38,13 +43,13 @@
 
  -3- Run: tar -zxf <project>-<version>.tar.gz
 
- -4- Update ./debian files
+ -4- Update ./debian files. Do not forget to:
 
- -5- Update a changelog file (Example: if the last paragraph is 3.4.1-1, add 3.4.1-2 paragraph)
+     - Update a changelog file (Example: if the last paragraph is 3.4.1-1, add 3.4.1-2 paragraph)
 
- -6- Copy ./debian folder from the top level into new source folder
+ -5- Copy ./debian folder from the top level into new source folder
 
- -7- Repeat steps -3- and -4- from (I)
+ -6- Repeat steps -3- and -4- from (I)
 
 
 (IV) Changing the version (new release):
@@ -59,7 +64,11 @@
 
  -3- Run: tar -zxf <project>-<version>.tar.gz
 
- -4- Update ./debian files (do not forget changelog file) 
+ -4- Update ./debian files. Do not forget to: 
+
+     - Update the name of the lib<project><version>.install file (Example: libgadgetron3.5.install -> libgadgetron3.6.install)
+
+     - Update a changelog file (Example: if the last paragraph is 3.4.1-1, add 3.4.2-1 paragraph)
 
  -5- Copy ./debian folder from the top level into new source folder
 
