@@ -1,5 +1,6 @@
 (I) Initial upload:
 -------------------
+
  -1- Create <project>-<version> folder (Example: gadgetron-3.4.1) with complete source code inside + debian folder
 
  -2- Create <project>_<version>.orig.tar.gz tarball (Example: gadgetron_3.4.1.orig.tar.gz) sith source code inside (no debian folder)
@@ -11,8 +12,13 @@
        dput ppa:<launchpad id>/<ppa name> <.changes file> (Example: dput ppa:gadgetron/gadgetron gadgetron_3.4.1-1_source.changes)
 
 
-(II) Changing source code or debian folder content:
+(II) Changing the source code content:
 ---------------------------------------------------
+
+ -1- Run: uscan --force-download --destdir . (from the top folder)
+
+ -2- Run: tar -zxf <project>-<version>.tar.gz
+
  -1- Make a patch: dpkg-source --commit
 
  -2- Update a changelog file (Example: if the last paragraph is 3.4.1-1, add 3.4.1-2 paragraph)
@@ -20,8 +26,30 @@
  -3- Repeat steps -3- and -4- from (I)
 
 
-(III) Changing the version (new release):
+(III) Changing the debian folder content:
+---------------------------------------------------
+
+ -1- Run: uscan --force-download --destdir . (from the top folder)
+
+ -2- As a result, you will get additional files:
+
+    -a- <project>-<version>.tar.gz (Example: gadgetron-3.4.2.tar.gz) - source code tarball
+    -b- symlink: gadgetron_3.4.2.orig.tar.gz -> gadgetron-3.4.2.tar.gz
+
+ -3- Run: tar -zxf <project>-<version>.tar.gz
+
+ -4- Update ./debian files
+
+ -5- Update a changelog file (Example: if the last paragraph is 3.4.1-1, add 3.4.1-2 paragraph)
+
+ -6- Copy ./debian folder from the top level into new source folder
+
+ -7- Repeat steps -3- and -4- from (I)
+
+
+(IV) Changing the version (new release):
 -----------------------------------------
+
  -1- Run: uscan --destdir . (from the top folder)
 
  -2- As a result, you will get additional files:
